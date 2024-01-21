@@ -1,0 +1,62 @@
+Das Lösen eines Merge-Konflikts in Git beinhaltet das Zusammenführen von Änderungen aus verschiedenen Branches, wenn Git Schwierigkeiten hat, dies automatisch zu tun. Hier sind die Schritte, die du unternehmen würdest, um Konflikte zwischen verschiedenen Branches zu beheben:
+
+    Erkennen des Konflikts:
+
+        Nach dem Versuch eines Zusammenführens (Merge) mit dem Befehl git merge oder git pull erhältst du eine Meldung über einen Konflikt. Du kannst auch den Status überprüfen, um zu sehen, welche Dateien konfliktbehaftet sind:
+
+    git status
+
+Öffnen der Konfliktdateien:
+
+    Öffne die konfliktbehafteten Dateien in einem Texteditor. In den Dateien siehst du spezielle Markierungen, die die Bereiche kennzeichnen, die konfliktbehaftet sind.
+
+Verstehen der Konflikte:
+
+    Innerhalb der konfliktbehafteten Dateien siehst du Abschnitte wie:
+
+    <<<<<<< HEAD
+    // Änderungen aus dem aktuellen Branch
+    =======
+    // Änderungen aus dem zu mergenden Branch
+    >>>>>>> branch-name
+
+    Der Abschnitt zwischen <<<<<<< HEAD und ======= repräsentiert die Änderungen im aktuellen Branch, während der Abschnitt zwischen ======= und >>>>>>> branch-name die Änderungen aus dem zu mergenden Branch darstellt.
+
+Manuelles Zusammenführen:
+
+    Bearbeite die Dateien, um die Konflikte zu beheben. Entferne die Konfliktmarkierungen (<<<<<<<, =======, >>>>>>>) und passe den Code so an, dass er die gewünschten Änderungen aus beiden Branches enthält.
+
+Hinzufügen der behobenen Dateien:
+
+    Nachdem du die Konflikte manuell behoben hast, füge die behobenen Dateien zur Staging-Area hinzu:
+   
+    git add dateiname
+
+    Wiederhole diesen Schritt für alle behobenen Dateien.
+
+Commit des Zusammenführungs-Commits:
+
+    Schließe den Merge-Prozess ab, indem du einen Commit erstellst. Git wird automatisch eine Commit-Nachricht generieren, die die Zusammenführung dokumentiert:
+   
+    git commit
+
+Abschluss des Merge-Prozesses:
+
+    Falls du in einem automatischen Merge-Konfliktprozess warst, schließe den Merge-Prozess ab:
+
+
+   
+    git merge --continue
+
+    Wenn du stattdessen einen Pull-Befehl verwendet hast, sollte dies automatisch durchgeführt werden.
+
+Testen:
+
+    Teste deine Änderungen, um sicherzustellen, dass die Konflikte erfolgreich gelöst wurden und der Code ordnungsgemäß funktioniert.
+
+Pushen der Änderungen:
+
+    Push deine Änderungen zurück zum Remote-Repository:
+   
+    git push origin branch-name
+

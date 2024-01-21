@@ -1,0 +1,31 @@
+"Merge" und "Rebase" sind zwei verschiedene Ansätze in Git, um Änderungen aus einem Branch in einen anderen einzuführen. Beide haben ihre Vor- und Nachteile und werden in unterschiedlichen Situationen bevorzugt.
+
+    Merge:
+        Was es macht: Bei einem Merge wird der Verlauf eines Branches in einen anderen "verschmolzen". Das bedeutet, dass die Änderungen aus einem Quellbranch in den Zielbranch übernommen werden.
+        Sichtbare Struktur: Der Verlauf des Quellbranches bleibt intakt, und ein neuer Merge-Commit wird erstellt, der die Änderungen aus beiden Branches zusammenführt.
+        Vorteile:
+            Klare Historie: Der Verlauf der Entwicklung bleibt deutlich sichtbar.
+            Sicher: Merges sind weniger anfällig für Konflikte.
+        Wann verwenden: Merges sind geeignet, wenn der Fokus auf der Entwicklung jeder Funktion oder jedes Features liegt, und eine klare Historie wichtig ist.
+
+    Rebase:
+        Was es macht: Beim Rebase wird der Verlauf des Quellbranches so umgeschrieben, dass er an die Spitze des Zielbranches angehängt wird. Es entsteht eine lineare Historie.
+        Sichtbare Struktur: Der Verlauf des Quellbranches wird als Teil des Zielbranches neu geschrieben, ohne zusätzliche Merge-Commits.
+        Vorteile:
+            Saubere Historie: Eine lineare Historie ohne zusätzliche Merge-Commits.
+            Kompaktheit: Vermeidet überflüssige Merges und hält die Geschichte sauber.
+        Wann verwenden: Rebase eignet sich gut, wenn Sie eine saubere und lineare Historie beibehalten möchten. Es wird oft verwendet, um vor dem Zusammenführen eines Branches in den Hauptbranch die Historie zu bereinigen.
+
+Wann man was verwenden sollte:
+
+    Merge:
+        Wenn die Historie nicht unbedingt linear sein muss.
+        In Zusammenarbeit mit anderen Entwicklern, um Kollaborationskonflikte zu minimieren.
+        Wenn es wichtig ist, den exakten Verlauf der Feature-Entwicklung zu dokumentieren.
+
+    Rebase:
+        Bei persönlichen Branches oder Feature-Branches, um eine klare und lineare Historie zu erhalten.
+        Wenn Sie vor dem Zusammenführen sicherstellen möchten, dass Ihr Branch mit dem Zielbranch auf dem neuesten Stand ist.
+        Wenn Sie die Historie bereinigen und Merge-Commits vermeiden möchten.
+
+Es ist wichtig zu beachten, dass das erneute Schreiben von Historie durch Rebase dazu führen kann, dass bereits geteilte Commits für andere Entwickler zu Problemen führen. Daher sollte Rebase mit Vorsicht verwendet werden, insbesondere auf gemeinsam genutzten Branches.

@@ -1,0 +1,61 @@
+Aktualisieren des Hauptzweigs:
+
+    Sicherstellen, dass dein lokaler Hauptzweig (zum Beispiel main oder master) auf dem neuesten Stand ist. Dies kann durchgeführt werden, indem du zum Hauptzweig wechselst und git pull ausführst:
+    git checkout main
+    git pull origin main
+
+Erstellen eines neuen Feature-Branches:
+
+    Erstelle einen neuen Branch für dein Feature. Verwende einen aussagekräftigen Namen, der das Ziel des Features beschreibt:
+    git checkout -b mein-feature-branch
+
+Änderungen vornehmen:
+
+    Implementiere deine gewünschten Änderungen, füge neue Dateien hinzu oder aktualisiere bestehende Dateien in diesem Feature-Branch.
+    # Mache deine Änderungen
+    git add .
+    git commit -m "Implementiere mein tolles Feature"
+
+Aktualisieren des Hauptzweigs erneut (optional):
+
+    Es ist ratsam, den Hauptzweig erneut zu aktualisieren, um sicherzustellen, dass dein Feature-Branch auf dem neuesten Stand ist, bevor du ihn mit dem Hauptzweig zusammenführst:
+    git checkout main
+    git pull origin main
+
+Zusammenführen des Feature-Branches mit dem Hauptzweig:
+
+    Wechsle zurück zu deinem Feature-Branch und führe den Zusammenführungsvorgang durch (normalerweise mit einem Merge):
+    git checkout mein-feature-branch
+    git merge main
+
+    Löse eventuelle Konflikte auf, falls sie auftreten. Führe dann erneut git add und git commit durch.
+
+Testen:
+
+    Teste dein Feature-Branch gründlich, um sicherzustellen, dass alles wie erwartet funktioniert.
+
+Pushen des Feature-Branches:
+
+    Push deinen Feature-Branch zu deinem Remote-Repository:
+    git push origin mein-feature-branch
+
+Pull Request (bei Verwendung von Pull Requests):
+
+    Wenn du Pull Requests verwendest (z. B. auf Plattformen wie GitHub oder GitLab), erstelle einen Pull Request für deinen Feature-Branch, um ihn mit dem Hauptzweig zusammenzuführen.
+
+Review und Zusammenführen:
+
+    Warte auf Reviews (falls erforderlich) und führe dann den Merge oder die Zusammenführung des Pull Requests durch.
+
+Lokalen Hauptzweig aktualisieren (falls nicht bereits getan):
+
+    Aktualisiere deinen lokalen Hauptzweig, um sicherzustellen, dass er die neuesten Änderungen enthält:
+    git checkout main
+    git pull origin main
+
+Löschen des Feature-Branches (optional):
+
+    Nachdem der Feature-Branch erfolgreich in den Hauptzweig integriert wurde, kannst du ihn lokal und auf dem Remote-Repository löschen (falls gewünscht):
+    git branch -d mein-feature-branch  # lokal löschen
+    git push origin --delete mein-feature-branch  # auf dem Remote-Repository löschen
+
